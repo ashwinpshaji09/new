@@ -1,0 +1,246 @@
+<html lang="en">
+    <head>
+        <title>
+            admin panel
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"> 
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        {% load static %}
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+          input{
+            margin:10px;
+          }
+          button{
+            margin:10px;
+
+          }
+          select{
+            margin:10px;
+
+          }
+          h5{
+            padding-left:18px;
+          }
+     
+        .box1{
+          color:black;
+          display:flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction:column;
+          width:100%;
+        }
+        /* Color of the links BEFORE scroll */
+        .navbar-scroll .nav-link,
+        .navbar-scroll .navbar-toggler-icon,
+        .navbar-scroll .navbar-brand {
+          color:black;
+        }
+        
+        /* Color of the links AFTER scroll */
+        .navbar-scrolled .nav-link,
+        .navbar-scrolled .navbar-toggler-icon,
+        .navbar-scrolled .navbar-brand {
+          color: black;
+        }
+        
+        /* Color of the navbar AFTER scroll */
+        .navbar-scroll,
+        .navbar-scrolled {
+          background-color: #cbbcb1;
+        }
+        
+        .mask-custom {
+          backdrop-filter: blur(5px);
+          background-color: rgba(255, 255, 255, .15);
+        }
+        
+        .navbar-brand {
+          font-size: 1.75rem;
+          letter-spacing: 3px;
+        }
+        .container1{
+          margin: 150px;
+          display:flex;
+          background-color:rgba(118, 118, 118, 0.6) ;
+          border-radius: 10px;
+      }
+      .left{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 50%;
+          color: black;
+          padding: 120px 0;
+      }
+      h1{
+          font-size: 40px;
+          text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.324);
+      
+      }
+      .left a{
+          width: 150px;
+          padding: 20px;
+          text-decoration: none;
+          text-align: center;
+          background-color: rgb(49, 82, 215);
+          color: black;
+          border-radius: 10px;
+          margin-top: 20px;
+      
+      }
+      .left a:hover{
+          background-color: rgb(47, 255, 238);
+          color: #000;
+      
+      }
+      
+      .right{
+          width: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .right img{
+          width: 100%;
+          height: 90%;
+          border-radius: 10px;
+          padding: 0 25px 0 0;
+      }
+      strong{
+        font-family: 'Arial Narrow Bold';
+      }
+
+      .container3{
+        display: flex;
+        flex-direction: column;
+      }
+      .header{
+        /* background-image: url({% static 'image/cover.jpg' %}); */
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .header img{
+        margin-bottom: -180px;
+        z-index: 1;
+        
+      }
+      .footer{
+        backdrop-filter: blur(20px);
+        background-color: rgba(0, 0,0, .5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+    
+      }
+      .name{
+        padding: 100px 10px 10px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+      }
+     
+      th,td{
+        border-collapse: collapse;
+        border: none;
+        color:black;
+      }
+      th{
+        text-align: left;
+        padding: 15px;
+        border-bottom: 1px solid rgb(211, 211, 211);
+    
+      }
+      td{
+        padding: 15px;
+        border-bottom: 1px solid rgb(211, 211, 211);;
+      }
+      h3{
+        text-align:left;
+      }
+      input{
+        border:none;
+      }
+      .nav-item{
+        color:#cbbcb1;
+      }
+    .nav-item:hover{
+        color:yellow;
+    }
+    .btn{
+      margin:10px;
+      border:none;
+      border-radius: 18px;
+      font-size: 10px;
+     
+      
+
+    }
+    .btn {
+      transition-duration: 0.4s;
+    }
+    
+    .btn:hover {
+      background-color: #b3c9a1; /* Green */
+    }
+  
+        
+        </style>
+      </head>
+      <body  style="background-image:linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);background-size: cover;
+      background-repeat: no-repeat;">
+        
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 py-0"  style="background-image:linear-gradient(to bottom, #a18cd1 0%, #fbc2eb 100%);">
+                <div class="container-fluid">
+                  <a class="navbar-brand"href="{% url 'load_loginpage' %}"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Lincoln_University_%28MO%29_logo.png" height="50" width="auto" ><span style="color: rgb(56, 54, 51);"><strong> </strong></span></a>
+                  <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                  <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                      <li class="nav-item">
+                        <a class="nav-link text-dark  btn btn-light rounded-50 "  href="{% url 'load_admin_home' %}"><strong>STAFFS</strong></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark  btn btn-light rounded-pill " href="{% url 'course1' %}"><strong>ADD COURSE</strong></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark  btn btn-light rounded-pill" href="{% url 'student1' %}"><strong>ADD STUDENT</strong></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark  btn btn-light rounded-pill" href="{% url 'show_student_details' %}"><strong>STUDENT DETAILS</strong></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link text-dark  btn btn-light rounded-pill" href="{% url 'logout' %}"><strong>LOGOUT</strong></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!-- Navbar -->
+            {% block content %}
+            
+            {% endblock %}
+        </body>
+        </html>

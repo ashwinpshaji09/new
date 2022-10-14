@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    
+
+</style>
+
+
+
+<div class=" justify-content-center d-flex " style="margin:50px 0 0;" >
+        <div class="">
+
+            <form method="post" action="sign_up" class=" p-sm-5 m-sm-3  light " style="backdrop-filter: blur(2px);
+            box-shadow: 2px 2px 5px rgb(161, 153, 153); display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 40px;"
+            enctype="multipart/form-data">
+{% csrf_token %}
+<h1 class='text-center  text-dark my-1' ><strong>REGISTRATION</strong></h1>
+
+{% for message in messages %}
+        <h5>
+            <div class="alert alert-danger mt-5">
+                {{ message }}
+            </div>
+        </h5>
+{% endfor %}
+    <input type="text" name="fname" placeholder="Enter your first name"class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="text" name="lname" placeholder="Enter your last name" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="text" name="address" placeholder="Enter your address" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="email" name="email" placeholder="Enter your email" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="text" name="uname" placeholder="Enter your username" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="password" name="passw" placeholder="Enter password"class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <input type="password" name="cpassw" placeholder="Enter confirm password" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <h6>Gender</h6>
+    <div>
+    <input type="radio" name="gender" id="male" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" name="gender" id="female" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" name="gender" id="Other" value="Female">
+    <label for="other">Other</label>
+    </div>
+    
+    <input type="number" name="mobile" placeholder="Enter your mobile number" class=" px-3 py-2 m-0 my-2 w-100 border border-dark rounded-pill text-center">
+    <h6>Select your profile photo</h6>
+    <input type="file" name="file" accept="image/*">
+    <button type="submit" class="form-control btn btn-secondary w-50 rounded-pill">Submit</button>
+
+</form>
+</div>
+</div>
+
+
+{% endblock %}

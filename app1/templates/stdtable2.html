@@ -1,0 +1,32 @@
+{% extends 'base3.html' %}
+{% block content %}
+<div class="box1 my-5">
+    <h1 class="my-5"><strong>STUDENTS DETAILS</strong></h1>
+    <table class="table text-dark table-bordered w-75">
+        <thead class="thead-dark">
+            <tr style="text-align:center;">
+                <th>Student Name</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Joining Date</th>
+                <th>Course</th>
+                <th>Course Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in std %}
+            <tr>
+                <td style="color:black; text-align:center;">{{ i.std_name }}</td>
+                <td>{{ i.std_address }}</td>
+                <td>{{ i.std_age }}</td>
+                <td>{{ i.Join_date }}</td>
+                <td>{{ i.course.course_name }}</td>
+                <td>{{ i.course.fee }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

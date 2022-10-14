@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+{% block content %}
+<div class="container-fluid row text-dark py-5 my-s" >
+    <div class="col-sm-3 my-3"></div>
+    <div class="col-sm-6">
+       
+    <form action="{% url 'add_student' %}" method="post" class=" p-sm-5 m-sm-3"  style=" backdrop-filter: blur(50px);
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgb(161, 153, 153);
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 40px; 
+    ">
+        {% csrf_token %}
+        
+        <h2 class="TEXT-CENTER my-3"><strong>REGISTER STUDENTS</strong></h2>
+        <br>
+        <div style="width:75%; padding:5px;"><h6 class=" p-0 m-0">Student Name</h6></div>
+        <input type="text" name="sname"class=" px-3 py-2 m-0  w-75 rounded-pill border border-dark" placeholder="Name"><br>
+        <div style="width:75%; padding:5px;"><h6 class=" p-0 m-0">Address</h6></div>
+        <input type="text" name="address" row="3" class=" px-3 py-2 m-0 w-75  rounded-pill border border-dark" placeholder="Address"><br>
+        <div style="width:75%; padding:5px;"><h6 class=" p-0 m-0">Age</h6></div>
+        <input type="number" name="age" class=" px-3 py-2 m-0 w-75  rounded-pill border border-dark" placeholder="Age"><br>
+        <div style="width:75%; padding:5px;"><h6 class=" p-0 m-0">Joining Date</h6></div>
+        <input type="date" name="jdate" class=" px-3 py-2 m-0 w-75  rounded-pill border border-dark" placeholder="Joining Date"><br>
+        <div style="width:75%; padding:5px;"><h6 class=" p-0 m-0">Course</h6></div>
+        <select class=" px-3 py-2 m-0 w-75" name="sel">
+            {% for course in courses %}
+            <option value="{{ course.id }}">{{ course.course_name}}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-secondary w-50 px-3 py-2 my-4">Submit</button>
+        
+    </form>
+    
+
+</div>
+<div class="col-sm-3"></div>
+
+</div>
+{% endblock %}
